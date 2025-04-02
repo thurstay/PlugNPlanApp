@@ -14,13 +14,14 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const brands = ["Tesla", "NETA", "ChangAn", "BYD", "Volvo", "ORA"];
 const models: { [key: string]: string[] } = {
-  Tesla: ["Model 3", "Model S", "Model X", "Model Y"],
+  Tesla: ["Model 3", "Model X", "Model Y"],
   NETA: ["V", "X", "V-II"],
   ChangAn: ["Deepal", "Lumin"],
   BYD: ["M6", "ATTO 3", "Seal", "Dolphin"],
   Volvo: ["EX30", "EC40", "EX40"],
   ORA: ["Good Cat", "07"],
 };
+
 
 const selectcar: React.FC = () => {
   const navigation = useNavigation();
@@ -29,6 +30,24 @@ const selectcar: React.FC = () => {
   const [brandModalVisible, setBrandModalVisible] = useState(false);
   const [modelModalVisible, setModelModalVisible] = useState(false);
   const [name, setName] = useState("");
+
+  const carImages: { [key: string]: any } = {
+    "ORA Good Cat": require("./assets/ora.png"),
+    "ORA 07": require("./assets/07.png"),
+    "Tesla Model 3": require("./assets/tesla3.png"),
+    "ChangAn Deepal": require("./assets/changan.png"),
+    "NETA V": require("./assets/neta v.png"),
+    "Tesla Model Y": require("./assets/car.png"),
+    "BYD ATTO 3": require("./assets/byd.png"),
+    "Volvo EX30": require("./assets/volvo.png")
+    // Add more models as needed
+  };
+  
+  const getCarImage = () => {
+    const key = `${selectedBrand} ${selectedModel}`;
+    return carImages[key] || require("./assets/car.png"); // Default image
+  };
+
 
   const handleSelectCar = async () => {
     const userId = await AsyncStorage.getItem("userId");
@@ -132,20 +151,20 @@ const selectcar: React.FC = () => {
       </Text>
       <View
         style={{
-          width: 320,
-          height: 200,
-          alignItems: "center",
-          justifyContent: "center",
-          shadowColor: "#000",
-          shadowOpacity: 0.4,
-          shadowRadius: 15,
-          shadowOffset: { width: 5, height: 20 },
-          elevation: 6,
+        width: 320,
+        height: 200,
+        alignItems: "center",
+        justifyContent: "center",
+        shadowColor: "#000",
+        shadowOpacity: 0.4,
+        shadowRadius: 15,
+        shadowOffset: { width: 5, height: 20 },
+        elevation: 6,
         }}
-      >
+        >
         <Image
-          source={require("./assets/car.png")}
-          style={{ width: 250, height: 140 }}
+        source={getCarImage()}
+        style={{ width: 250, height: 140, resizeMode: "contain" }}
         />
       </View>
 

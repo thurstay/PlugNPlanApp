@@ -203,6 +203,7 @@ export default function page2() {
         </Text>
         <Text
           style={{
+            width: 300,
             left: 53,
             fontSize: 15,
             color: "white",
@@ -236,75 +237,76 @@ export default function page2() {
         />
         <Text
           style={{
-            left: 4,
+            left: 15,
             fontSize: 15,
             fontWeight: "bold",
             color: "white",
             marginBottom: 7,
           }}
         >
-          Cost: DC start 7.7 - 8.7 baht
+          Cost:                           DC starts 7.7 - 8.7 baht
         </Text>
+        
         <Text
           style={{
-            left: 192,
+            left: 152,
             fontSize: 15,
             fontWeight: "bold",
             color: "white",
             marginBottom: 7,
           }}
         >
-          AC 80 baht/hr.
+          AC starts 80 baht/hr.
         </Text>
 
         <Text
           style={{
-            left: 4,
+            left: 15,
             fontSize: 15,
             fontWeight: "bold",
             color: "white",
             marginBottom: 7,
           }}
         >
-          Charger Type: DC/AC
+          Charger Type:         DC/AC
         </Text>
         <Text
           style={{
-            left: 4,
+            left: 15,
             fontSize: 15,
             fontWeight: "bold",
             color: "white",
             marginBottom: 7,
           }}
         >
-          Current Battery:{" "}
+          Current Battery:    {" "}
           {batteryPercentage ? batteryPercentage : "Loading..."}%
         </Text>
         <Text
           style={{
-            left: 4,
+            left: 15,
             fontSize: 15,
             fontWeight: "bold",
             color: "white",
             marginBottom: 7,
           }}
         >
-          Estimate Time: {estimateTime}
+          Estimate Time:        {estimateTime}
         </Text>
         <Text
           style={{
-            left: 4,
+            left: 15,
             fontSize: 15,
             fontWeight: "bold",
             color: "white",
             marginBottom: 7,
           }}
         >
-          Estimate Cost: DC: {costDc} baht
+          Estimate Cost:        DC: {costDc} baht
         </Text>
         <Text
           style={{
-            left: 192,
+            left: 151,
             fontSize: 15,
             fontWeight: "bold",
             color: "white",
