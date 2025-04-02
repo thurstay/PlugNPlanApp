@@ -14,10 +14,10 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const brands = ["Tesla", "NETA", "ChangAn", "BYD", "Volvo", "ORA"];
 const models: { [key: string]: string[] } = {
-  Tesla: ["Model 3", "Model X", "Model Y"],
+  Tesla: ["Model 3", "Model Y"],
   NETA: ["V", "X", "V-II"],
   ChangAn: ["Deepal", "Lumin"],
-  BYD: ["M6", "ATTO 3", "Seal", "Dolphin"],
+  BYD: [ "ATTO 3", "Seal", "Dolphin"],
   Volvo: ["EX30", "EC40", "EX40"],
   ORA: ["Good Cat", "07"],
 };
@@ -37,7 +37,7 @@ const selectcar: React.FC = () => {
     "Tesla Model 3": require("./assets/tesla3.png"),
     "ChangAn Deepal": require("./assets/changan.png"),
     "NETA V": require("./assets/neta v.png"),
-    "Tesla Model Y": require("./assets/car.png"),
+    "Tesla Model Y": require("./assets/teslay.png"),
     "BYD ATTO 3": require("./assets/byd.png"),
     "Volvo EX30": require("./assets/volvo.png")
     // Add more models as needed
@@ -45,7 +45,7 @@ const selectcar: React.FC = () => {
   
   const getCarImage = () => {
     const key = `${selectedBrand} ${selectedModel}`;
-    return carImages[key] || require("./assets/car.png"); // Default image
+    return carImages[key] || require("./assets/tesla3.png"); // Default image
   };
 
 
